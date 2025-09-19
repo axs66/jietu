@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>items</key>
+    <array>
+        <!-- 基本设置卡片 -->
+        <dict>
+            <key>cell</key>
+            <string>PSGroupCell</string>
+            <key>label</key>
+            <string>基本设置</string>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSSwitchCell</string>
+            <key>default</key>
+            <true/>
+            <key>defaults</key>
+            <string>com.screenshotwatermark.preferences</string>
+            <key>key</key>
+            <string>enabled</string>
+            <key>label</key>
+            <string>启用水印功能</string>
+            <key>PostNotification</key>
+            <string>com.screenshotwatermark.preferences/preferencesChanged</string>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSSwitchCell</string>
+            <key>default</key>
+            <true/>
+            <key>defaults</key>
+            <string>com.screenshotwatermark.preferences</string>
+            <key>key</key>
+            <string>frameEnabled</string>
+            <key>label</key>
+            <string>启用套壳功能</string>
+            <key>PostNotification</key>
+            <string>com.screenshotwatermark.preferences/preferencesChanged</string>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSSwitchCell</string>
+            <key>default</key>
+            <false/>
+            <key>defaults</key>
+            <string>com.screenshotwatermark.preferences</string>
+            <key>key</key>
+            <string>deleteOriginal</string>
+            <key>label</key>
+            <string>删除原图</string>
+            <key>PostNotification</key>
+            <string>com.screenshotwatermark.preferences/preferencesChanged</string>
+        </dict>
+        
+        <!-- 水印设置卡片 -->
+        <dict>
+            <key>cell</key>
+            <string>PSGroupCell</string>
+            <key>label</key>
+            <string>水印设置</string>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSLinkCell</string>
+            <key>default</key>
+            <string>默认水印</string>
+            <key>defaults</key>
+            <string>com.screenshotwatermark.preferences</string>
+            <key>key</key>
+            <string>watermarkFolder</string>
+            <key>label</key>
+            <string>选择水印文件夹</string>
+            <key>id</key>
+            <string>watermarkFolder</string>
+            <key>validTitles</key>
+            <array>
+                <string>默认水印</string>
+            </array>
+            <key>validValues</key>
+            <array>
+                <string>默认水印</string>
+            </array>
+            <key>PostNotification</key>
+            <string>com.screenshotwatermark.preferences/preferencesChanged</string>
+        </dict>
+        
+        <!-- 套壳设置卡片 -->
+        <dict>
+            <key>cell</key>
+            <string>PSLinkCell</string>
+            <key>default</key>
+            <string>默认套壳</string>
+            <key>defaults</key>
+            <string>com.screenshotwatermark.preferences</string>
+            <key>key</key>
+            <string>frameFolder</string>
+            <key>label</key>
+            <string>选择套壳模板</string>
+            <key>id</key>
+            <string>frameFolder</string>
+            <key>validTitles</key>
+            <array>
+                <string>默认套壳</string>
+            </array>
+            <key>validValues</key>
+            <array>
+                <string>默认套壳</string>
+            </array>
+            <key>PostNotification</key>
+            <string>com.screenshotwatermark.preferences/preferencesChanged</string>
+        </dict>
+        
+        <!-- 水印透明度卡片 -->
+        <dict>
+            <key>cell</key>
+            <string>PSGroupCell</string>
+            <key>label</key>
+            <string>水印透明度</string>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSSliderCell</string>
+            <key>default</key>
+            <real>0.6</real>
+            <key>defaults</key>
+            <string>com.screenshotwatermark.preferences</string>
+            <key>key</key>
+            <string>watermarkOpacity</string>
+            <key>label</key>
+            <string>透明度调节</string>
+            <key>max</key>
+            <real>1</real>
+            <key>min</key>
+            <real>0.1</real>
+            <key>showValue</key>
+            <true/>
+            <key>PostNotification</key>
+            <string>com.screenshotwatermark.preferences/preferencesChanged</string>
+        </dict>
+        
+        <!-- 水印叠加设置卡片 -->
+        <dict>
+            <key>cell</key>
+            <string>PSGroupCell</string>
+            <key>label</key>
+            <string>水印叠加设置</string>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSSegmentCell</string>
+            <key>default</key>
+            <string>正常</string>
+            <key>defaults</key>
+            <string>com.screenshotwatermark.preferences</string>
+            <key>key</key>
+            <string>watermarkBlendMode</string>
+            <key>label</key>
+            <string>混合模式</string>
+            <key>validValues</key>
+            <array>
+                <string>正常</string>
+                <string>叠加</string>
+                <string>滤色</string>
+                <string>变亮</string>
+                <string>强光</string>
+            </array>
+            <key>validTitles</key>
+            <array>
+                <string>正常</string>
+                <string>叠加</string>
+                <string>滤色</string>
+                <string>变亮</string>
+                <string>强光</string>
+            </array>
+            <key>PostNotification</key>
+            <string>com.screenshotwatermark.preferences/preferencesChanged</string>
+        </dict>
+        
+        <!-- 说明卡片 -->
+        <dict>
+            <key>cell</key>
+            <string>PSGroupCell</string>
+            <key>label</key>
+            <string>使用说明</string>
+            <key>footerText</key>
+            <string>水印文件夹路径: /var/mobile/SY/
+
+1:水印图片路径，在SY文件夹下创建任意名称的文件夹，将水印图片命名为"水印.png"放入其中。
+2:套壳模板路径，在SY文件夹下创建任意名称的文件夹，将套壳图片和配置文件命名为"tk.png"和tk.cfg放入同一文件夹中，截图时将自动添加套壳效果。
+以上可多创建多个文件夹放置素材
+</string>
+        </dict>
+        
+        <!-- 开发者信息 -->
+        <dict>
+            <key>cell</key>
+            <string>PSGroupCell</string>
+            <key>footerText</key>
+            <string>©️2025 全局截图水印俊仔制作
+
+禁止二传倒卖</string>
+        </dict>
+    </array>
+    <key>title</key>
+    <string>截图水印&amp;套壳</string>
+</dict>
+</plist>
