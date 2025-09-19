@@ -100,3 +100,27 @@ static UIImage *addWatermarkToImage(UIImage *originalImage) {
     UIGraphicsEndImageContext();
     return result;
 }
+
+// ===================== Watermark 功能 =====================
+UIImage* Watermark_addWatermark(UIImage *image) {
+    if (!image) return nil;
+
+    CGSize size = image.size;
+    UIGraphicsBeginImageContextWithOptions(size, NO, image.scale);
+    [image drawAtPoint:CGPointZero];
+
+    // 绘制水印文字
+    NSString *watermarkText = @"© MyWatermark";
+    NSDictionary *attrs = @{
+        NSFontAttributeName: [UIFont boldSystemFontOfSize:30],
+        NSForegroundColorAttributeName: [[UIColor whiteColor] colorWithAlphaComponent:0.5]
+    };
+
+    CGSize textSize = [watermarkText sizeWithAttributes:attrs];
+    CGPoint textPoint = CGPointMake(size.width - textSize.width - 20, size.height - textSize.height - 20);
+    [watermarkText drawAtPoint:textPoint withAttributes:attrs];
+
+    UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return result;
+}
