@@ -55,3 +55,24 @@ static UIImage *addFrameToImage(UIImage *originalImage) {
     UIGraphicsEndImageContext();
     return result;
 }
+
+// ===================== Frame 功能 =====================
+UIImage* Frame_addFrame(UIImage *image) {
+    if (!image) return nil;
+
+    CGSize size = image.size;
+    CGFloat borderWidth = 20.0;
+
+    UIGraphicsBeginImageContextWithOptions(size, NO, image.scale);
+    [image drawAtPoint:CGPointZero];
+
+    // 绘制边框
+    UIBezierPath *borderPath = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, size.width, size.height)];
+    [[UIColor colorWithWhite:0 alpha:0.3] setStroke];
+    borderPath.lineWidth = borderWidth;
+    [borderPath stroke];
+
+    UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return result;
+}
