@@ -13,7 +13,7 @@ TARGET = iphone:clang:latest:14.5
 include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = ScreenshotWatermark
-ScreenshotWatermark_FILES = Tweak.x
+ScreenshotWatermark_FILES = Tweak.x Watermark.x Frame.x DeviceAuth.x ScreenshotWatermarkHelper.m
 ScreenshotWatermark_CFLAGS = -fobjc-arc
 ScreenshotWatermark_FRAMEWORKS = UIKit Photos AVFoundation CoreMedia MobileCoreServices ReplayKit
 ScreenshotWatermark_EXTRA_FRAMEWORKS = Cephei
